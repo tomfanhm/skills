@@ -1,19 +1,11 @@
 ---
 name: drizzle
-description: Setup and configuration guide for Drizzle ORM. Use when setting up a new database, configuring schema, or running migrations.
+description: "Setup and configuration guide for Drizzle ORM with schema management and migrations. WHEN: \"set up Drizzle\", \"configure database schema\", \"run migrations\", \"drizzle-kit\", \"database connection\", \"seed database\"."
 ---
 
 # Drizzle ORM Skill
 
-## Purpose
-This skill guides you through the "Golden Path" setup for Drizzle ORM, covering installation, configuration, schema management, and migrations.
-
-## When to Use
-- Setting up a new database connection (Postgres, Neon, MySQL, SQLite).
-- Configuring `drizzle.config.ts` for type-safe migrations.
-- Defining schema using the modular `src/db/schema/*` pattern.
-- Running migrations (`drizzle-kit generate` vs `push`).
-- Seeding the database.
+Golden-path setup for Drizzle ORM: installation, configuration, schema management, and migrations.
 
 ## Instructions
 
@@ -34,7 +26,7 @@ npm install postgres
 
 ### 2. Configuration (`drizzle.config.ts`)
 
-Use `defineConfig` for type safety. See `assets/drizzle.config.ts`.
+Use `defineConfig` for type safety. See [the config template](assets/drizzle.config.ts).
 
 Key settings:
 - **schema**: Path to your schema file/folder (e.g., `./src/db/schema.ts` or `./src/db/schema/index.ts`).
@@ -59,7 +51,7 @@ export const users = pgTable('users', {
 
 ### 4. Database Connection (`db.ts`)
 
-Instantiate the client and ORM instance. See `assets/db.ts`.
+Instantiate the client and ORM instance. See [the connection template](assets/db.ts).
 
 ```typescript
 import { drizzle } from 'drizzle-orm/postgres-js';

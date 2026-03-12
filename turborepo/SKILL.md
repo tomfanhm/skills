@@ -1,19 +1,11 @@
 ---
 name: turborepo
-description: Setup and configuration guide for Turborepo monorepos. Use when starting a new monorepo, configuring pipelines, managing workspaces, or setting up remote caching.
+description: "Setup and configuration guide for Turborepo monorepos with pipelines, caching, and workspaces. WHEN: \"set up Turborepo\", \"configure turbo.json\", \"monorepo setup\", \"turbo prune\", \"remote caching\", \"workspace management\"."
 ---
 
 # Turborepo Skill
 
-## Purpose
-This skill guides you through the setup, configuration, and management of a Turborepo monorepo, following the "Golden Path" for performance and scalability.
-
-## When to Use
-- Starting a new project with multiple packages/apps.
-- Migrating an existing monorepo to Turborepo.
-- Configuring `turbo.json` pipelines and caching strategy.
-- Setting up remote caching (Vercel or self-hosted).
-- optimizing CI/CD workflows with `turbo prune`.
+Golden-path setup for Turborepo monorepos: initialization, pipeline configuration, workspace management, and remote caching.
 
 ## Instructions
 
@@ -43,7 +35,7 @@ The `turbo.json` file controls the task pipeline and caching behavior.
 - **globalDependencies**: Track config files (`tsconfig.json`, `.env`) that affect all tasks.
 
 **Example Pipeline:**
-See `assets/turbo.json` for a starter template.
+See [the starter template](assets/turbo.json).
 
 ### 3. Workspace Management
 

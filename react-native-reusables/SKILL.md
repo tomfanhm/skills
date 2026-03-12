@@ -1,6 +1,6 @@
 ---
 name: react-native-reusables
-description: Specialized knowledge for building universal React Native component libraries with a shadcn/ui experience using RN Primitives and NativeWind. Use when creating, styling, or debugging UI components in an Expo or React Native environment. Trigger when the user mentions "shadcn React Native", "RN Primitives", "react-native-reusables", or specific primitives like Accordion, Dialog, Popover, Select, DropdownMenu, ContextMenu, Toast, Tooltip, Menubar, NavigationMenu, HoverCard, AlertDialog, Collapsible, Checkbox, Switch, RadioGroup, Slider, Tabs, Toggle, ToggleGroup, Toolbar, Table, Progress, Separator, AspectRatio, Avatar, Label, Portal, Slot in a mobile or universal app context.
+description: "Build universal React Native component libraries with shadcn/ui patterns using RN Primitives and NativeWind. WHEN: \"shadcn React Native\", \"RN Primitives\", \"react-native-reusables\", \"mobile UI components\", \"Expo components\", \"universal components\"."
 ---
 
 ## Core Principles
@@ -15,66 +15,66 @@ React Native Reusables (RNR) adapts the **shadcn/ui** philosophy to mobile-first
 
 ## Mobile-Specific Warnings
 
-| Component          | Warning                                                                               |
-| ------------------ | ------------------------------------------------------------------------------------- |
-| **Slider**         | Gesture handling must be implemented manually on native                               |
-| **Toast**          | Auto-dismiss timer must be implemented manually                                       |
-| **ContextMenu**    | Triggered by long-press on native, right-click on web                                 |
-| **Menubar**        | Must manually handle closing when navigating away from the screen                     |
-| **NavigationMenu** | Must manually handle closing when navigating away from the screen                     |
-| **Tooltip**        | `side` only supports `'top'` / `'bottom'` on native (`'left'`/`'right'` are web-only) |
-| **Label**          | Must use `nativeID` on `Label.Text`; match with `aria-labelledby` on the form field   |
+| Component | Warning |
+|-----------|---------|
+| **Slider** | Gesture handling must be implemented manually on native |
+| **Toast** | Auto-dismiss timer must be implemented manually |
+| **ContextMenu** | Triggered by long-press on native, right-click on web |
+| **Menubar** | Must manually handle closing when navigating away from the screen |
+| **NavigationMenu** | Must manually handle closing when navigating away from the screen |
+| **Tooltip** | `side` only supports `'top'` / `'bottom'` on native (`'left'`/`'right'` are web-only) |
+| **Label** | Must use `nativeID` on `Label.Text`; match with `aria-labelledby` on the form field |
 
 ## Implementation Workflow
 
 1. Install the component: `npx expo install @rn-primitives/<component>`
 2. Install peer dependencies if needed: `npx expo install @rn-primitives/portal`
 3. For Portal-based components, add `<PortalHost />` to root layout
-4. Read the component's reference file from `references/` for full prop tables and context hooks
+4. Read the component's reference file for full prop tables and context hooks
 
 ## Reference Files
 
-All 33 primitives have a dedicated reference file in `references/`. Read the relevant file before implementing a component.
+All 33 primitives have a dedicated reference. Read the relevant file before implementing a component.
 
 **Core UI Primitives**
 
-| Reference File                  | Component                         |
-| ------------------------------- | --------------------------------- |
-| `references/accordion.md`       | Accordion                         |
-| `references/alert-dialog.md`    | Alert Dialog — Portal required    |
-| `references/aspect-ratio.md`    | Aspect Ratio                      |
-| `references/avatar.md`          | Avatar                            |
-| `references/checkbox.md`        | Checkbox                          |
-| `references/collapsible.md`     | Collapsible                       |
-| `references/context-menu.md`    | Context Menu — Portal required    |
-| `references/dialog.md`          | Dialog — Portal required          |
-| `references/dropdown-menu.md`   | Dropdown Menu — Portal required   |
-| `references/hover-card.md`      | Hover Card — Portal required      |
-| `references/label.md`           | Label                             |
-| `references/menubar.md`         | Menubar — Portal required         |
-| `references/navigation-menu.md` | Navigation Menu — Portal required |
-| `references/popover.md`         | Popover — Portal required         |
-| `references/progress.md`        | Progress                          |
-| `references/radio-group.md`     | Radio Group                       |
-| `references/select.md`          | Select — Portal required          |
-| `references/separator.md`       | Separator                         |
-| `references/slider.md`          | Slider                            |
-| `references/switch.md`          | Switch                            |
-| `references/table.md`           | Table                             |
-| `references/tabs.md`            | Tabs                              |
-| `references/toast.md`           | Toast — Portal required           |
-| `references/toggle.md`          | Toggle                            |
-| `references/toggle-group.md`    | Toggle Group                      |
-| `references/toolbar.md`         | Toolbar                           |
-| `references/tooltip.md`         | Tooltip — Portal required         |
+| Component | Portal |
+|-----------|--------|
+| [Accordion](references/accordion.md) | No |
+| [Alert Dialog](references/alert-dialog.md) | Yes |
+| [Aspect Ratio](references/aspect-ratio.md) | No |
+| [Avatar](references/avatar.md) | No |
+| [Checkbox](references/checkbox.md) | No |
+| [Collapsible](references/collapsible.md) | No |
+| [Context Menu](references/context-menu/README.md) | Yes |
+| [Dialog](references/dialog.md) | Yes |
+| [Dropdown Menu](references/dropdown-menu/README.md) | Yes |
+| [Hover Card](references/hover-card.md) | Yes |
+| [Label](references/label.md) | No |
+| [Menubar](references/menubar/README.md) | Yes |
+| [Navigation Menu](references/navigation-menu.md) | Yes |
+| [Popover](references/popover.md) | Yes |
+| [Progress](references/progress.md) | No |
+| [Radio Group](references/radio-group.md) | No |
+| [Select](references/select.md) | Yes |
+| [Separator](references/separator.md) | No |
+| [Slider](references/slider.md) | No |
+| [Switch](references/switch.md) | No |
+| [Table](references/table.md) | No |
+| [Tabs](references/tabs.md) | No |
+| [Toast](references/toast.md) | Yes |
+| [Toggle](references/toggle.md) | No |
+| [Toggle Group](references/toggle-group.md) | No |
+| [Toolbar](references/toolbar.md) | No |
+| [Tooltip](references/tooltip.md) | Yes |
 
 **Shared Primitives**
 
-| Reference File         | Component                                                                |
-| ---------------------- | ------------------------------------------------------------------------ |
-| `references/hooks.md`  | Hooks (`useAugmentedRef`, `useControllableState`, `useRelativePosition`) |
-| `references/portal.md` | Portal — native portal implementation backed by zustand                  |
-| `references/slot.md`   | Slot — merges props onto immediate child; enables `asChild` pattern      |
-| `references/types.md`  | Types — shared TypeScript types                                          |
-| `references/utils.md`  | Utils (`ToggleGroupUtils`, `EmptyGestureResponderEvent`)                 |
-| `references/index.md`  | Full component listing                                                   |
+| Component | Description |
+|-----------|-------------|
+| [Hooks](references/hooks.md) | `useAugmentedRef`, `useControllableState`, `useRelativePosition` |
+| [Portal](references/portal.md) | Native portal implementation backed by zustand |
+| [Slot](references/slot.md) | Merges props onto immediate child; enables `asChild` pattern |
+| [Types](references/types.md) | Shared TypeScript types |
+| [Utils](references/utils.md) | `ToggleGroupUtils`, `EmptyGestureResponderEvent` |
+| [Index](references/index.md) | Full component listing |

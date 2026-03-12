@@ -1,18 +1,11 @@
 ---
 name: tailwind
-description: Setup and configuration guide for Tailwind CSS. Use when adding styling to a project, configuring themes, or setting up utility classes.
+description: "Setup and configuration guide for Tailwind CSS v3.4 with theme, plugins, and utility setup. WHEN: \"set up Tailwind\", \"configure Tailwind theme\", \"add Tailwind CSS\", \"cn utility\", \"class merging\", \"Tailwind config\"."
 ---
 
 # Tailwind CSS Skill
 
-## Purpose
-This skill guides you through the "Golden Path" setup for Tailwind CSS v3.4, ensuring a production-ready configuration with optimal tooling.
-
-## When to Use
-- Starting a new web project (Next.js, Vite, etc.).
-- configuring `tailwind.config.js` theme and plugins.
-- Setting up class sorting and merging utilities (`cn`).
-- Debugging styling conflicts.
+Golden-path setup for Tailwind CSS v3.4: installation, configuration, class sorting, and the `cn` utility.
 
 ## Instructions
 
@@ -34,7 +27,7 @@ Ensure `postcss.config.js` exists. Tailwind is often pre-installed, but verify p
 - **Theme**: Use `extend` to preserve defaults.
 - **Plugins**: Add `typography` and `forms` for robust baselines.
 
-See `assets/tailwind.config.js` for the template.
+See [the config template](assets/tailwind.config.js).
 
 ### 3. Essential Tools
 
@@ -52,7 +45,7 @@ Use `clsx` + `tailwind-merge` to handle dynamic classes safely (especially for r
 npm install clsx tailwind-merge
 ```
 
-See `assets/utils.ts` for the implementation.
+See [the cn implementation](assets/utils.ts).
 
 ### 4. Global Styles (`globals.css`)
 
